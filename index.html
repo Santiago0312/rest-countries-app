@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorador de Países — FrontendMentor Style</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <h1>Explorador de Países</h1>
+      <button id="themeToggle" class="btn">🌗 Tema</button>
+    </header>
+
+    <main class="container controls">
+      <label class="search">
+        <input id="searchInput" type="search" placeholder="Buscar país..." />
+      </label>
+
+      <label class="select">
+        <select id="regionSelect">
+          <option value="">Todas las regiones</option>
+          <option value="Africa">África</option>
+          <option value="Americas">Américas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europa</option>
+          <option value="Oceania">Oceanía</option>
+        </select>
+      </label>
+    </main>
+
+    <section id="grid" class="container grid" aria-live="polite"></section>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <img class="flag" alt="Bandera" />
+        <div class="card-body">
+          <h2 class="name"></h2>
+          <p class="meta"><strong>Población:</strong> <span class="population"></span></p>
+          <p class="meta"><strong>Región:</strong> <span class="region"></span></p>
+          <p class="meta"><strong>Capital:</strong> <span class="capital"></span></p>
+        </div>
+      </article>
+    </template>
+
+    <dialog id="detailsDialog">
+      <div class="dialog-content">
+        <button id="closeDialog" class="btn close">✕</button>
+        <div id="details"></div>
+      </div>
+    </dialog>
+
+    <footer class="container footer">
+      <p>Datos por <a href="https://restcountries.com" target="_blank" rel="noopener noreferrer">REST Countries</a>. Desarrollado con HTML, CSS y JavaScript.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
